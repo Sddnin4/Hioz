@@ -1,0 +1,31 @@
+name: Build Paper Plugin
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Lay ma nguon tu kho chua
+      uses: actions/checkout@v4
+
+    - name: Thiet lap moi truong Java JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+
+    - name: Bien dich bang Maven
+      run: mvn clean package
+
+    - name: Luu va xuat file .JAR ket qua
+      uses: actions/upload-artifact@v4
+      with:
+        name: 10A1-SMP-Scoreboard-Jar
+        path: target/*.jar
