@@ -21,14 +21,14 @@
         </repository>
     </repositories>
 
-    <dependencies>
+        <dependencies>
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.26.20-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+            <version>1.21.1-R0.1-SNAPSHOT</version> <scope>provided</scope>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
